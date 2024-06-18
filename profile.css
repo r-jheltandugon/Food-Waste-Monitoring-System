@@ -1,14 +1,7 @@
-
-body{
-    /* background-color: #20cd79; */
- 
-
-
-}
-
-
-  
-
+/* .profile {
+    color: #fff;
+    background-color: #06C167;
+} */
 
 .cover{
  width: 100%;
@@ -25,16 +18,8 @@ body{
     width: 700px;
     height: 900px;
     margin: 20px auto ;
-    
-    /* background-color:rgba(90, 255, 208, 0.713); */
-    /* box-shadow:0 .5rem 1rem rgba(0,0,0.1); */
-
-    color:black;
     padding: 10px 20px 20px 20px;
     font-size: 20px;
-    /* border-radius: 30px ; */
-    
-
 }
 .info{
     /* font-family: 'Times New Roman', Times, serif; */
@@ -45,9 +30,6 @@ body{
 .table-container{
     padding: 0 ;
     margin: 20px auto 10px;
-    /* border: 1px solid ; */
-    box-shadow: ;
-    /* border-radius: 10px; */
 }
 
 .table{
@@ -67,10 +49,6 @@ th{
 
 
     
-}
-th,td{
-    /* border: 1px solid #12121385; */
-
 }
 .table-wrapper{
     max-height: 130px;
