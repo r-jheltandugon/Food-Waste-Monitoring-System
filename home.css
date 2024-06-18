@@ -11,7 +11,6 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
-  /* font-family:sans-serif; */
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 
@@ -210,7 +209,6 @@ and (min-device-width : 1200px)
   background-color: #414141;
   width: 100%;
   text-align: left;
-  font-family: ;
   font-weight: bold;
   font-size: 16px;
   padding: 50px;
@@ -333,9 +331,6 @@ and (min-device-width : 1200px)
 }
 
 @media (max-width: 767px) {
-  .content{
-    /* padding: 10px; */
-  }
   .deli .para{
     font-size: 23px; 
     text-align: center;
@@ -369,10 +364,6 @@ and (min-device-width : 1200px)
   
 }
 
-/* social */
-.sociallist{
-
-}
 .social
 {
   
@@ -432,7 +423,4 @@ and (min-device-width : 1200px)
  align-items: center; 
  text-decoration: underline 5px;
  text-decoration-color: #06C167;
-}
-.heading:hover{
-  /* letter-spacing: 3px; */
 }

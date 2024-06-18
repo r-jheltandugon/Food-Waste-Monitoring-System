@@ -38,6 +38,7 @@ if($_SESSION['name']==''){
                 <li><a href="about.html" >About</a></li>
                 <li><a href="contact.html"  >Contact</a></li>
                 <li><a href="profile.php"  class="active">Profile</a></li>
+                <li><a href="profile.php" style="color: #06C167;">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -80,12 +81,7 @@ if($_SESSION['name']==''){
               <p style="">Name  :<?php echo"". $_SESSION['name'] ;?> </p><br>
               <p style="">Email :<?php echo"". $_SESSION['email'];?> </p><br>
               <p style="">Gender:<?php echo"". $_SESSION['gender'] ;?> </p><br>
-               <!-- <p style="font-family: 'Times New Roman', Times, serif;">gender  :<?php echo"". $_SESSION['gender'] ;?> </p><br>  -->
-              
-              <a href="logout.php" style="float: left;margin-top: 6px ;border-radius:5px; background-color: #06C167; color: white;padding: ;padding-left: 10px;padding-right: 10px;">Logout</a>
               </div>
-              <br>
-              <br>
 
             
             
