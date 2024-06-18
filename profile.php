@@ -17,7 +17,7 @@ if($_SESSION['name']==''){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Document</title> -->
+    <title>Profile</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,7 +38,7 @@ if($_SESSION['name']==''){
                 <li><a href="about.html" >About</a></li>
                 <li><a href="contact.html"  >Contact</a></li>
                 <li><a href="profile.php"  class="active">Profile</a></li>
-                <li><a href="profile.php" style="color: #06C167;">Logout</a></li>
+                <li><a href="logout.php" style="color: #06C167;">Logout</a></li>
             </ul>
         </nav>
     </header>
