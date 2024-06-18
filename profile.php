@@ -19,7 +19,7 @@ if($_SESSION['name']==''){
 </head>
 <body>
     <header>
-        <div class="logo">Food <b style="color: #06C167;">Donate</b></div>
+        <div class="logo"><b style="color: #06C167;">Food Waste Monitoring System</b></div>
         <div class="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -31,7 +31,7 @@ if($_SESSION['name']==''){
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="profile.php" class="active">Profile</a></li>
-                <li><a href="logout.php" style="color: #06C167;">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
