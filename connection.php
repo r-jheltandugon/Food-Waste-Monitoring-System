@@ -1,7 +1,14 @@
-
-
 <?php
-//change mysqli_connect(host_name,username, password); 
-$connection = mysqli_connect("localhost", "root", "");
-$db = mysqli_select_db($connection, 'demo');
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "demo";
+
+    // Create connection
+    $connection = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
 ?>
