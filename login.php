@@ -8,7 +8,6 @@ if (isset($_POST['sign'])) {
   $password = $_POST['password'];
   $sanitized_emailid =  mysqli_real_escape_string($connection, $email);
   $sanitized_password =  mysqli_real_escape_string($connection, $password);
-  // $hash=password_hash($password,PASSWORD_DEFAULT);
 
   $sql = "select * from login where email='$sanitized_emailid'";
   $result = mysqli_query($connection, $sql);
