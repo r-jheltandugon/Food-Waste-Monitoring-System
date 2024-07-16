@@ -31,7 +31,7 @@ if($_SESSION['name']==''){
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="profile.php" class="active">Profile</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="logout.php" style="color: #06C167;">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -81,5 +81,48 @@ if($_SESSION['name']==''){
             </div>          
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+          <p class="about">
+            <span> About us</span>The basic concept of this project  Food Waste Monitoring is to collect the excess/leftover  food from donors such as hotels, restaurants, cafeteria , etc and distribute to  the  needy people. Additionally, we aim to transform food waste into fertilizer, promoting sustainability and environmental responsibility.
+          </p>
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+          <div>
+            <p><span> Contact</span> </p>
+            
+          </div>
+          <div>
+        
+            <p> (+63) 000 000 0000 </p>
+            
+          </div>
+          <div>
+            <!-- <i class="fa fa-envelope" style="font-size: 17px;
+            line-height: 38px; color:white;"></i> -->
+            <p><a href="#"> foodwastemonitoringsystem@gmail.com</a></p>
+          </div>
+          
+          <div class="sociallist">
+            <ul class="social">
+            <li><a href="https://www.facebook.com"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+            <li><a href="https://twitter.com"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+            <li><a href="https://www.instagram.com"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+           </ul>
+          </div>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+          <h6><span> Food Waste Monitoring System</span></h6>
+          <p class="menu">
+            <a href="#"> Home</a> |
+            <a href="about.html"> About</a> |
+            <a href="profile.php"> Profile</a> |
+            <a href="contact.html"> Contact</a>
+          </p>
+          <p class="name"> Food Waste Monitoring System &copy 2024</p>
+        </div>
+      </footer>
+
 </body>
 </html>

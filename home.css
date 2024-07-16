@@ -439,6 +439,13 @@ input:focus{
   background-size: cover; 
 }
 
+.cover-about {
+  width: 100%;
+  height: 90vh;
+  background: url('img/about.png') no-repeat center center;
+  background-size: cover; 
+}
+
 .help {
   padding-left: 10px;
 }
