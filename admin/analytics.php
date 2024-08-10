@@ -27,14 +27,7 @@ if($_SESSION['name']==''){
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Admin Dashboard Panel</title> 
-    
-<?php
- $connection=mysqli_connect("localhost","root","");
- $db=mysqli_select_db($connection,'demo');
- 
 
-
-?>
 </head>
 <body>
     <nav>

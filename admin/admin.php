@@ -36,10 +36,6 @@ if($_SESSION['name']==''){
 <body>
     <nav>
         <div class="logo-name">
-            <div class="logo-image">
-                <!--<img src="images/logo.png" alt="">-->
-            </div>
-
             <span class="logo_name">ADMIN</span>
         </div>
 
@@ -49,10 +45,6 @@ if($_SESSION['name']==''){
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
-                <!-- <li><a href="#">
-                    <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Content</span>
-                </a></li> -->
                 <li><a href="analytics.php">
                     <i class="uil uil-chart"></i>
                     <span class="link-name">Analytics</span>
@@ -60,10 +52,6 @@ if($_SESSION['name']==''){
                 <li><a href="donate.php">
                     <i class="uil uil-heart"></i>
                     <span class="link-name">Donates</span>
-                </a></li>
-                <li><a href="feedback.php">
-                    <i class="uil uil-comments"></i>
-                    <span class="link-name">Feedbacks</span>
                 </a></li>
                 <li><a href="adminprofile.php">
                     <i class="uil uil-user"></i>
@@ -100,14 +88,8 @@ if($_SESSION['name']==''){
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <!-- <p>Food Donate</p> -->
-            <p  class ="logo" >Food <b style="color: #06C167; ">Donate</b></p>
+            <p  class ="logo" ><b style="color: #06C167; ">Food Waste Monitoring System</b></p>
              <p class="user"></p>
-            <!-- <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div> -->
-            
-            <!--<img src="images/profile.jpg" alt="">-->
         </div>
 
         <div class="dash-content">
@@ -131,26 +113,14 @@ if($_SESSION['name']==''){
                         <!-- <span class="number">50,120</span> -->
                     </div>
                     <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Feedbacks</span>
-                        <?php
-                           $query="SELECT count(*) as count FROM  user_feedback";
-                           $result=mysqli_query($connection, $query);
-                           $row=mysqli_fetch_assoc($result);
-                         echo "<span class=\"number\">".$row['count']."</span>";
-                        ?>
-                        <!-- <span class="number">20,120</span> -->
-                    </div>
-                    <div class="box box3">
-                        <i class="uil uil-heart"></i>
-                        <span class="text">Total doantes</span>
+                    <i class="uil uil-heart"></i>
+                        <span class="text">Total donates</span>
                         <?php
                            $query="SELECT count(*) as count FROM food_donations";
                            $result=mysqli_query($connection, $query);
                            $row=mysqli_fetch_assoc($result);
                          echo "<span class=\"number\">".$row['count']."</span>";
                         ?>
-                        <!-- <span class="number">10,120</span> -->
                     </div>
                 </div>
             </div>

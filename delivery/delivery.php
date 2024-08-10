@@ -8,7 +8,6 @@ if($_SESSION['name']==''){
 	header("location:deliverylogin.php");
 }
 $name=$_SESSION['name'];
-$city=$_SESSION['city'];
 $ch=curl_init();
 curl_setopt($ch,CURLOPT_URL,"http://ip-api.com/json");
 curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
@@ -16,8 +15,6 @@ $result=curl_exec($ch);
 $result=json_decode($result);
 // $city= $result->city;
 // echo $city;
-
-$id=$_SESSION['Did'];
 
 
 
@@ -113,7 +110,7 @@ $id=$_SESSION['Did'];
 $sql = "SELECT fd.Fid AS Fid,fd.location as cure, fd.name,fd.phoneno,fd.date,fd.delivery_by, fd.address as From_address, 
 ad.name AS delivery_person_name, ad.address AS To_address
 FROM food_donations fd
-LEFT JOIN admin ad ON fd.assigned_to = ad.Aid where assigned_to IS NOT NULL and   delivery_by IS NULL and fd.location='$city';
+LEFT JOIN admin ad ON fd.assigned_to = ad.Aid where assigned_to IS NOT NULL and   delivery_by IS NULL;
 ";
 
 // Execute the query

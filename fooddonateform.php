@@ -10,21 +10,14 @@ $db=mysqli_select_db($connection,'demo');
 if(isset($_POST['submit']))
 {
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
-    $meal=mysqli_real_escape_string($connection, $_POST['meal']);
     $category=$_POST['image-choice'];
     $quantity=mysqli_real_escape_string($connection, $_POST['quantity']);
     // $email=$_POST['email'];
     $phoneno=mysqli_real_escape_string($connection, $_POST['phoneno']);
-    $district=mysqli_real_escape_string($connection, $_POST['district']);
     $address=mysqli_real_escape_string($connection, $_POST['address']);
     $name=mysqli_real_escape_string($connection, $_POST['name']);
-  
 
- 
-
-
-
-    $query="insert into food_donations(email,food,type,category,phoneno,location,address,name,quantity) values('$emailid','$foodname','$meal','$category','$phoneno','$district','$address','$name','$quantity')";
+    $query="insert into food_donations(email,food,category,phoneno,address,name,quantity) values('$emailid','$foodname','$category','$phoneno','$address','$name','$quantity')";
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
@@ -58,34 +51,17 @@ if(isset($_POST['submit']))
         <label for="foodname"  > Food Name:</label>
         <input type="text" id="foodname" name="foodname" required/>
         </div>
-      
-      
-        <div class="radio">
-        <label for="meal" >Meal type :</label> 
-        <br><br>
-
-        <input type="radio" name="meal" id="veg" value="veg" required/>
-        <label for="veg" style="padding-right: 40px;">Veg</label>
-        <input type="radio" name="meal" id="Non-veg" value="Non-veg" >
-        <label for="Non-veg">Non-veg</label>
-    
-        </div>
-        <br>
         <div class="input">
         <label for="food">Select the Category:</label>
         <br><br>
         <div class="image-radio-group">
-            <input type="radio" id="raw-food" name="image-choice" value="raw-food">
-            <label for="raw-food">
-              <img src="img/raw-food.png" alt="raw-food" >
+            <input type="radio" id="bio" name="image-choice" value="bio">
+            <label for="bio">
+              <img src="img/bio.png" alt="bio" >
             </label>
-            <input type="radio" id="cooked-food" name="image-choice" value="cooked-food"checked>
-            <label for="cooked-food">
-              <img src="img/cooked-food.png" alt="cooked-food" >
-            </label>
-            <input type="radio" id="packed-food" name="image-choice" value="packed-food">
-            <label for="packed-food">
-              <img src="img/packed-food.png" alt="packed-food" >
+            <input type="radio" id="nonbio" name="image-choice" value="nonbio"checked>
+            <label for="nonbio">
+              <img src="img/nonbio.png" alt="nonbio" >
             </label>
           </div>
           <br>
@@ -112,44 +88,10 @@ if(isset($_POST['submit']))
       </div>
       </div>
         <div class="input">
-        <label for="location"></label>
-        <label for="district">District:</label>
-<select id="district" name="district" style="padding:10px;">
-  <option value="chennai">Chennai</option>
-  <option value="kancheepuram">Kancheepuram</option>
-  <option value="thiruvallur">Thiruvallur</option>
-  <option value="vellore">Vellore</option>
-  <option value="tiruvannamalai">Tiruvannamalai</option>
-  <option value="tiruvallur">Tiruvallur</option>
-  <option value="tiruppur">Tiruppur</option>
-  <option value="coimbatore">Coimbatore</option>
-  <option value="erode">Erode</option>
-  <option value="salem">Salem</option>
-  <option value="namakkal">Namakkal</option>
-  <option value="tiruchirappalli">Tiruchirappalli</option>
-  <option value="thanjavur">Thanjavur</option>
-  <option value="pudukkottai">Pudukkottai</option>
-  <option value="karur">Karur</option>
-  <option value="ariyalur">Ariyalur</option>
-  <option value="perambalur">Perambalur</option>
-  <option value="madurai" selected>Madurai</option>
-  <option value="virudhunagar">Virudhunagar</option>
-  <option value="dindigul">Dindigul</option>
-  <option value="ramanathapuram">Ramanathapuram</option>
-  <option value="sivaganga">Sivaganga</option>
-  <option value="thoothukkudi">Thoothukkudi</option>
-  <option value="tirunelveli">Tirunelveli</option>
-  <option value="tiruppur">Tiruppur</option>
-  <option value="tenkasi">Tenkasi</option>
-  <option value="kanniyakumari">Kanniyakumari</option>
-</select> 
 
-        <label for="address" style="padding-left: 10px;">Address:</label>
-        <input type="text" id="address" name="address" required/><br>
+          <label for="address" style="padding-left: 10px;">Address:</label>
+          <input type="text" id="address" name="address" required/><br>
         
-      
-       
-       
         </div>
         <div class="btn">
             <button type="submit" name="submit"> submit</button>
