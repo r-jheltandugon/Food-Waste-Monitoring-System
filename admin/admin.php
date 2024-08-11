@@ -1,8 +1,6 @@
 
 <?php
 ob_start(); 
-// $connection = mysqli_connect("localhost:3307", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
  include("connect.php"); 
 if($_SESSION['name']==''){
 	header("location:signin.php");
@@ -152,40 +150,6 @@ $data = array();
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;
 }
-
-// If the delivery person has taken an order, update the assigned_to field in the database
-if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
-
-    
-    $order_id = $_POST['order_id'];
-    $delivery_person_id = $_POST['delivery_person_id'];
-    $sql = "SELECT * FROM food_donations WHERE Fid = $order_id AND assigned_to IS NOT NULL";
-    $result = mysqli_query($connection, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        // Order has already been assigned to someone else
-        die("Sorry, this order has already been assigned to someone else.");
-    }
-
-
-
-    $sql = "UPDATE food_donations SET assigned_to = $delivery_person_id WHERE Fid = $order_id";
-    // $result = mysqli_query($conn, $sql);
-    $result=mysqli_query($connection, $sql);
-
-
-    if (!$result) {
-        die("Error assigning order: " . mysqli_error($conn));
-    }
-
-    // Reload the page to prevent duplicate assignments
-    header('Location: ' . $_SERVER['REQUEST_URI']);
-    // exit;
-    ob_end_flush();
-}
-// mysqli_close($conn);
-
-
 ?>
 
 <!-- Display the orders in an HTML table -->
@@ -202,20 +166,33 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
             <th>date/time</th>
             <th>address</th>
             <th>Quantity</th>
-            <!-- <th>Action</th> -->
          
           
            
         </tr>
         </thead>
-       <tbody>
+        <tbody>
+            <?php foreach ($data as $row) { ?>
+            <?php
+                // Convert category values
+                if ($row['category'] == 'bio') {
+                    $row['category'] = 'Biodegradable';
+                } elseif ($row['category'] == 'nonbio') {
+                    $row['category'] = 'Non-Biodegradable';
+                }
 
-        <?php foreach ($data as $row) { ?>
-        <?php    echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td>";?>
-
-        </tr>
-        <?php } ?>
-    </tbody>
+                echo "<tr>
+                        <td data-label=\"name\">".$row['name']."</td>
+                        <td data-label=\"food\">".$row['food']."</td>  
+                        <td data-label=\"category\">".$row['category']."</td>
+                        <td data-label=\"phoneno\">".$row['phoneno']."</td>
+                        <td data-label=\"date\">".$row['date']."</td>
+                        <td data-label=\"Address\">".$row['address']."</td>
+                        <td data-label=\"quantity\">".$row['quantity']."</td>
+                    </tr>";
+            ?>
+            <?php } ?>
+        </tbody>
 </table>
 
             </div>
@@ -226,8 +203,16 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
         $result=mysqli_query($connection, $query);
         if($result==true){
             while($row=mysqli_fetch_assoc($result)){
-                echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td><td  data-label=\"Status\" >".$row['quantity']."</td></tr>";
-
+                echo " <tr>
+                        <td data-label=\"name\">".$row['name']."</td>
+                        <td data-label=\"food\">".$row['food']."</td>
+                        <td data-label=\"category\">".$row['category']."</td>
+                        <td data-label=\"phoneno\">".$row['phoneno']."</td>
+                        <td data-label=\"date\">".$row['date']."</td>
+                        <td data-label=\"Address\">".$row['address']."</td>
+                        <td data-label=\"quantity\">".$row['quantity']."</td>
+                        <td  data-label=\"Status\" >".$row['quantity']."</td>
+                       </tr>";
              }
             
           }

@@ -1,8 +1,5 @@
 
 <?php
-// $connection = mysqli_connect("localhost:3307", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
-include "../connection.php";
 include("connect.php"); 
 if($_SESSION['name']==''){
 	header("location:signin.php");
@@ -96,14 +93,8 @@ if($_SESSION['name']==''){
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
             <!-- <p>Food Donate</p> -->
-            <p  class ="logo" >Food <b style="color: #06C167; ">Donate</b></p>
+            <p  class ="logo" ><b style="color: #06C167; ">Food Waste Monitoring System</b></p>
              <p class="user"></p>
-            <!-- <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div> -->
-            
-            <!--<img src="images/profile.jpg" alt="">-->
         </div>
         <br>
         <br>
