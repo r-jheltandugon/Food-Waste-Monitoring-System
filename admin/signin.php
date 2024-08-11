@@ -1,7 +1,6 @@
 <?php
 session_start();
-// $connection = mysqli_connect("localhost:3307", "root", "");
-// $db = mysqli_select_db($connection, 'demo');
+
 include '../connection.php';
 $msg=0;
 if (isset($_POST['sign'])) {
@@ -9,7 +8,6 @@ if (isset($_POST['sign'])) {
   $password = $_POST['password'];
   $sanitized_emailid =  mysqli_real_escape_string($connection, $email);
   $sanitized_password =  mysqli_real_escape_string($connection, $password);
-  // $hash=password_hash($password,PASSWORD_DEFAULT);
 
   $sql = "select * from admin where email='$sanitized_emailid'";
   $result = mysqli_query($connection, $sql);
