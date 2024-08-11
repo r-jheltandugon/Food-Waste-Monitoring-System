@@ -136,7 +136,7 @@ if($_SESSION['name']==''){
 $loc= $_SESSION['location'];
 
 // Define the SQL query to fetch unassigned orders
-$sql = "SELECT * FROM food_donations WHERE assigned_to IS NULL";
+$sql = "SELECT * FROM food_donations";
 
 // Execute the query
 $result=mysqli_query($connection, $sql);
@@ -211,25 +211,8 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
        <tbody>
 
         <?php foreach ($data as $row) { ?>
-        <?php    echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td>";
-?>
-        
-            <!-- <td><?= $row['Fid'] ?></td>
-            <td><?= $row['name'] ?></td>
-            <td><?= $row['address'] ?></td> -->
-            <td data-label="Action" style="margin:auto">
-                <?php if ($row['assigned_to'] == null) { ?>
-                    <form method="post" action=" ">
-                        <input type="hidden" name="order_id" value="<?= $row['Fid'] ?>">
-                        <input type="hidden" name="delivery_person_id" value="<?= $id ?>">
-                        <button type="submit" name="food">Get Food</button>
-                    </form>
-                <?php } else if ($row['assigned_to'] == $id) { ?>
-                    Order assigned to you
-                <?php } else { ?>
-                    Order assigned to another delivery person
-                <?php } ?>
-            </td>
+        <?php    echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td>";?>
+
         </tr>
         <?php } ?>
     </tbody>

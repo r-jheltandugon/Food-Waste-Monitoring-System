@@ -126,11 +126,6 @@ if (isset($_POST['sign'])) {
             </div> -->
          
             <button type="submit" name="sign">Login</button>
-            <div class="login-signup" >
-                    <span class="text">Don't have an account?
-                        <a href="signup.php" class="text login-link">Register</a>
-                    </span>
-                </div>
         </form>
     </div>
     <script src="login.js" ></script>

@@ -45,10 +45,6 @@ if($_SESSION['name']==''){
                     <i class="uil uil-heart"></i>
                     <span class="link-name">Donates</span>
                 </a></li>
-                <li><a href="feedback.php">
-                    <i class="uil uil-comments"></i>
-                    <span class="link-name">Feedbacks</span>
-                </a></li>
                 <li><a href="#">
                     <i class="uil uil-user"></i>
                     <span class="link-name">Profile</span>
