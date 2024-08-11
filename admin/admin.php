@@ -136,7 +136,7 @@ if($_SESSION['name']==''){
 $loc= $_SESSION['location'];
 
 // Define the SQL query to fetch unassigned orders
-$sql = "SELECT * FROM food_donations WHERE assigned_to IS NULL and location=\"$loc\"";
+$sql = "SELECT * FROM food_donations WHERE assigned_to IS NULL";
 
 // Execute the query
 $result=mysqli_query($connection, $sql);
@@ -236,30 +236,6 @@ if (isset($_POST['food']) && isset($_POST['delivery_person_id'])) {
 </table>
 
             </div>
-
-        
-
- 
-<!-- 
-                <div class="table-container">
-         <p id="heading">donated</p>
-         <div class="table-wrapper">
-        <table class="table">
-        <thead>
-        <tr>
-            <th >Name</th>
-            <th>food</th>
-            <th>Category</th>
-            <th>phoneno</th>
-            <th>date/time</th>
-            <th>address</th>
-            <th>Quantity</th>
-            <th>Status</th>
-          
-           
-        </tr>
-        </thead>
-       <tbody>
    
          <?php
         $loc=$_SESSION['location'];
