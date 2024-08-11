@@ -104,34 +104,29 @@ if($_SESSION['name']==''){
 
             <div class="activity">
                
-            <div class="location">
-                <!-- <p class="logo">Filter by Location</p> -->
+            <div class="category">
           <form method="post">
-             <label for="location" class="logo">Select Location:</label>
+             <label for="category" class="logo">Select Category:</label>
              <!-- <br> -->
-            <select id="location" name="location">
-               <option value="chennai">chennai</option>
-               <option value="madurai">madurai</option>
-               <option value="coimbatore">coimbatore</option>
-        
+            <select id="category" name="category">
+               <option value="bio">Biodegrable</option>
+               <option value="nonbio">Non-Biodegrable</option>      
             </select>
                 <input type="submit" value="Get Details">
          </form>
          <br>
 
          <?php
-    // Get the selected location from the form
-    if(isset($_POST['location'])) {
-      $location = $_POST['location'];
+
+    if(isset($_POST['category'])) {
+      $category = $_POST['category'];
       
-      // Query the database for people in the selected location
-      $sql = "SELECT * FROM food_donations WHERE location='$location'";
+      $sql = "SELECT * FROM food_donations WHERE category='$category'";
       $result=mysqli_query($connection, $sql);
     //   $result = $conn->query($sql);
       
       // If there are results, display them in a table
       if ($result->num_rows > 0) {
-        // echo "<h2>Food Donate in $location:</h2>";
         
         echo" <div class=\"table-container\">";
         echo "    <div class=\"table-wrapper\">";
@@ -152,7 +147,6 @@ if($_SESSION['name']==''){
         while($row = $result->fetch_assoc()) {
             echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td></tr>";
 
-        //   echo "<tr><td>" . $row["name"] . "</td><td>" . $row["phoneno"] . "</td><td>" . $row["location"] . "</td></tr>";
         }
         echo "</tbody></table></div>";
       } else {
