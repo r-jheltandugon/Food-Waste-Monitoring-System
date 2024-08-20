@@ -301,6 +301,7 @@ nav.close ~ .dashboard .top{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    color: var(--text-color);
 }
 .dash-content .boxes .box{
     display: flex;
