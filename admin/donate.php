@@ -145,6 +145,13 @@ if($_SESSION['name']==''){
     </thead><tbody>";
 
         while($row = $result->fetch_assoc()) {
+
+            if ($row['category'] == 'bio') {
+                $row['category'] = 'Biodegradable';
+            } elseif ($row['category'] == 'nonbio') {
+                $row['category'] = 'Non-Biodegradable';
+            }
+
             echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td></tr>";
 
         }
