@@ -51,13 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Admin Profile</title>
     <style>
-        .container {
-            max-width: 600px;
+        .boxes {
             margin: auto;
             padding: 20px;
-            background-color: #f4f4f4;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
         }
 
         .input-group {
@@ -155,10 +153,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span class="text">Admin Profile</span>
                 </div>
 
-                <div class="container">
+                <div class="boxes">
                     <form action="adminprofile.php" method="POST">
                         <div class="input-group">
-                            <label for="name">Name</label>
+                            <span class="text"><label for="name">Name</label></span>
                             <input type="text" id="name" name="name" value="<?php echo $admin['name']; ?>" required>
                         </div>
                         <div class="input-group">
