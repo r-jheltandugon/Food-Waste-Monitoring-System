@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Apr 18, 2023 at 04:00 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: 127.0.0.1
+-- Generation Time: Aug 21, 2024 at 05:12 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,6 +40,9 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
+INSERT INTO `admin` (`Aid`, `name`, `email`, `password`, `location`, `address`) VALUES
+(7, 'Admin', 'admin@gmail.com', '$2y$10$SxJyat1uyMzxR27x0Ze/.OvM6ZuLEhpysnmVSSBN7ZzC29AgXcJI6', 'madurai', 'Guian, Eastern Samar');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +61,8 @@ CREATE TABLE `delivery_persons` (
 -- Dumping data for table `delivery_persons`
 --
 
+INSERT INTO `delivery_persons` (`Did`, `name`, `email`, `password`, `city`) VALUES
+(6, 'test', 'test@gmail.com', '$2y$10$6goFiGRpIb3VMZ0H77WHEuDDlwZA0XVXPDSkzUyop5GRY7FIEwv0a', 'madurai');
 
 -- --------------------------------------------------------
 
@@ -85,6 +90,11 @@ CREATE TABLE `food_donations` (
 -- Dumping data for table `food_donations`
 --
 
+INSERT INTO `food_donations` (`Fid`, `name`, `email`, `food`, `type`, `category`, `quantity`, `date`, `address`, `location`, `phoneno`, `assigned_to`, `delivery_by`) VALUES
+(26, 'R-jhel Tandugon', 'jherietandugon@gmail.com', 'Adobo', 'veg', 'bio', '10', '2024-06-18 12:40:22', 'Brgy.Seguinon Salcedo Eastern Samar', 'chennai', '9971478896', NULL, NULL),
+(27, 'tests', 'jherietandugon@gmail.com', 'Kalabasa', '', 'bio', '50kg', '2024-08-10 21:49:36', 'Brgy. 3 Guian, E. S.', '', '0912123324', 5, NULL),
+(28, 'Trexie Danco', 'test@gmail.com', 'Vegetables', '', 'bio', '100 kg', '2024-08-20 17:19:52', 'Brgy.  09 Guian, E.S.', '', '0965765646', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +113,9 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
+INSERT INTO `login` (`id`, `name`, `email`, `password`, `gender`) VALUES
+(21, 'rjhel', 'jherietandugon@gmail.com', '$2y$10$P5wALb6wAiC604oI6yJ5eeptvhbGFi3tx4OqO9TSjySL.bg0Q2SbO', 'male'),
+(22, 'Test', 'test@gmail.com', '$2y$10$9LlhNz/Y13rkL39eX3.F8eGciyf4olIzg8qfpry.6hW1byUnYE.ZO', 'male');
 
 -- --------------------------------------------------------
 
@@ -174,25 +187,25 @@ ALTER TABLE `user_feedback`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `delivery_persons`
 --
 ALTER TABLE `delivery_persons`
-  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Did` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `food_donations`
 --
 ALTER TABLE `food_donations`
-  MODIFY `Fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_feedback`

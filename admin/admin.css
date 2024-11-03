@@ -507,6 +507,8 @@ table {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
+    background: #111;
+    color: #aaa;
   }
   
   @media screen and (max-width: 600px) {
