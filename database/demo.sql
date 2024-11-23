@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2024 at 05:12 AM
+-- Generation Time: Nov 23, 2024 at 11:46 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -115,7 +115,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `name`, `email`, `password`, `gender`) VALUES
 (21, 'rjhel', 'jherietandugon@gmail.com', '$2y$10$P5wALb6wAiC604oI6yJ5eeptvhbGFi3tx4OqO9TSjySL.bg0Q2SbO', 'male'),
-(22, 'Test', 'test@gmail.com', '$2y$10$9LlhNz/Y13rkL39eX3.F8eGciyf4olIzg8qfpry.6hW1byUnYE.ZO', 'male');
+(23, 'R-jhel', 'qwerty@gmail.com', '$2y$10$HzMGdz/fz3IACRs/nXSbGOpNAmA9eBACNwbE3tsyX/ap3REvQAtiK', 'male'),
+(24, 'test', 'test@gmail.com', '$2y$10$JqyaC96Wsjiix1ongH9VvO3KcK0WmOQVbbZfar4wHvDjbRtSzcrE.', 'male');
 
 -- --------------------------------------------------------
 
@@ -205,7 +206,7 @@ ALTER TABLE `food_donations`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user_feedback`
