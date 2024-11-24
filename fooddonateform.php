@@ -83,7 +83,7 @@ if(isset($_POST['submit']))
       </div>
       <div>
         <label for="phoneno" >PhoneNo:</label>
-      <input type="text" id="phoneno" name="phoneno" maxlength="10" pattern="[0-9]{10}" required />
+      <input type="text" id="phoneno" name="phoneno" maxlength="11" pattern="[0-9]{11}" required />
         
       </div>
       </div>

@@ -162,7 +162,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <th >Name</th>
             <th>food</th>
             <th>Category</th>
-            <th>phoneno</th>
+            <th>phone no</th>
             <th>date/time</th>
             <th>address</th>
             <th>Quantity</th>

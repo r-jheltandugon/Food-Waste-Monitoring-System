@@ -118,7 +118,7 @@ if($_SESSION['name']==''){
                     </div>
                     <div class="box box3">
                         <i class="uil uil-heart"></i>
-                        <span class="text">Total doantes</span>
+                        <span class="text">Total donates</span>
                         <?php
                            $query="SELECT count(*) as count FROM food_donations";
                            $result=mysqli_query($connection, $query);
@@ -165,55 +165,58 @@ var yValues = [<?php echo $male; ?>, <?php echo $female; ?>];
 var barColors = ["#06C167", "blue"];
 var bar = ["red", "blue"];
 
+// User Details Chart
 new Chart("myChart", {
     type: "bar",
     data: {
-        labels: xValues,
+        labels: ["Male", "Female"], // x-axis labels
         datasets: [{
-            backgroundColor: barColors,
-            data: yValues
+            backgroundColor: ["blue", "red"], // bar colors
+            data: [<?php echo $male; ?>, <?php echo $female; ?>] // y-axis data
         }]
     },
     options: {
         legend: { display: false },
-        title: {
-            display: true,
-            text: "User Details"
+        title: { 
+            display: true, 
+            text: "User Details" 
         },
         scales: {
-            y: {
-                beginAtZero: true,
+            yAxes: [{
                 ticks: {
-                    stepSize: 1 // This will ensure the y-axis shows whole numbers only
+                    beginAtZero: true, // Start at 0
+                    stepSize: 1, // Ensure whole numbers
+                    callback: function(value) { return value.toFixed(0); } // Force whole numbers
                 }
-            }
+            }]
         }
     }
 });
 
-// Chart for Food Donation Details
+// Food Donation Details Chart
 new Chart("donateChart", {
     type: "bar",
     data: {
-        labels: xplace,
+        labels: ["Biodegradable", "Non-Biodegradable"], // x-axis labels
         datasets: [{
-            backgroundColor: bar,
-            data: yplace
+            backgroundColor: ["#06C167", "yellow"], // bar colors
+            data: [<?php echo $bio; ?>, <?php echo $nonbio; ?>] // y-axis data
         }]
     },
     options: {
         legend: { display: false },
-        title: {
-            display: true,
-            text: "Food Donation Details"
+        title: { 
+            display: true, 
+            text: "Food Donation Details" 
         },
         scales: {
-            y: {
-                beginAtZero: true,
+            yAxes: [{
                 ticks: {
-                    stepSize: 1 
+                    beginAtZero: true, // Start at 0
+                    stepSize: 1, // Ensure whole numbers
+                    callback: function(value) { return value.toFixed(0); } // Force whole numbers
                 }
-            }
+            }]
         }
     }
 });
