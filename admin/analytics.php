@@ -134,6 +134,8 @@ if($_SESSION['name']==''){
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 <br>
 <canvas id="donateChart" style="width:100%;max-width:600px"></canvas>
+<br>
+<canvas id="classification" style="width:100%;max-width:600px"></canvas>
 
 <script>
 <?php
@@ -156,14 +158,27 @@ if($_SESSION['name']==''){
     $res4 = mysqli_query($connection, $q4);
     $ro4 = mysqli_fetch_assoc($res4);
     $nonbio = intval($ro4['count']);
+
+    $q5 = "SELECT count(*) as count FROM food_donations WHERE classification='fertilizer'";
+    $res5 = mysqli_query($connection, $q5);
+    $ro5 = mysqli_fetch_assoc($res5);
+    $fertilizer = intval($ro5['count']);
+
+    $q6 = "SELECT count(*) as count FROM food_donations WHERE classification='pet_food'";
+    $res6 = mysqli_query($connection, $q6);
+    $ro6 = mysqli_fetch_assoc($res6);
+    $pet_food = intval($ro6['count']);
 ?>
 
 var xValues = ["Male", "Female"];
+var aplace = ["Fertilizer", "Pet Food"];
 var xplace = ["Biodegradable", "Non-Biodegradable"];
+var bValues = [<?php echo $fertilizer; ?>, <?php echo $pet_food; ?>];
 var yplace = [<?php echo $bio; ?>, <?php echo $nonbio; ?>];
 var yValues = [<?php echo $male; ?>, <?php echo $female; ?>];
 var barColors = ["#06C167", "blue"];
 var bar = ["red", "blue"];
+var barColors2 = ["orange", "brown"];
 
 // User Details Chart
 new Chart("myChart", {
@@ -180,6 +195,34 @@ new Chart("myChart", {
         title: { 
             display: true, 
             text: "User Details" 
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true, // Start at 0
+                    stepSize: 1, // Ensure whole numbers
+                    callback: function(value) { return value.toFixed(0); } // Force whole numbers
+                }
+            }]
+        }
+    }
+});
+
+// Classification Details Chart
+new Chart("classification", {
+    type: "bar",
+    data: {
+        labels: ["Fertilizer", "Pet Food"], // x-axis labels
+        datasets: [{
+            backgroundColor: ["orange", "brown"], // bar colors
+            data: [<?php echo $fertilizer; ?>, <?php echo $pet_food; ?>] // y-axis data
+        }]
+    },
+    options: {
+        legend: { display: false },
+        title: { 
+            display: true, 
+            text: "Classification Details" 
         },
         scales: {
             yAxes: [{
