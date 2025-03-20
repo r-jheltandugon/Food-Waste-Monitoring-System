@@ -61,6 +61,7 @@ if($_SESSION['name']==''){
                                 <th>Food</th>
                                 <th>Type</th>
                                 <th>Category</th>
+                                <th>Classification</th>
                                 <th>Date/Time</th>
                             </tr>
                         </thead>
@@ -71,7 +72,7 @@ if($_SESSION['name']==''){
                             $result = mysqli_query($connection, $query);
                             if ($result) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<tr><td>{$row['food']}</td><td>{$row['type']}</td><td>{$row['category']}</td><td>{$row['date']}</td></tr>";
+                                    echo "<tr><td>{$row['food']}</td><td>{$row['type']}</td><td>{$row['category']}</td><td>{$row['classification']}</td><td>{$row['date']}</td></tr>";
                                 }
                             }
                             ?> 
