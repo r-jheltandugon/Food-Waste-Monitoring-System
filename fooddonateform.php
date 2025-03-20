@@ -11,13 +11,13 @@ if(isset($_POST['submit']))
 {
     $foodname=mysqli_real_escape_string($connection, $_POST['foodname']);
     $category=$_POST['image-choice'];
+    $classification=mysqli_real_escape_string($connection, $_POST['classification']);
     $quantity=mysqli_real_escape_string($connection, $_POST['quantity']);
-    // $email=$_POST['email'];
     $phoneno=mysqli_real_escape_string($connection, $_POST['phoneno']);
     $address=mysqli_real_escape_string($connection, $_POST['address']);
     $name=mysqli_real_escape_string($connection, $_POST['name']);
 
-    $query="insert into food_donations(email,food,category,phoneno,address,name,quantity) values('$emailid','$foodname','$category','$phoneno','$address','$name','$quantity')";
+    $query="insert into food_donations(email,food,category,classification,phoneno,address,name,quantity) values('$emailid','$foodname','$category','$classification','$phoneno','$address','$name','$quantity')";
     $query_run= mysqli_query($connection, $query);
     if($query_run)
     {
