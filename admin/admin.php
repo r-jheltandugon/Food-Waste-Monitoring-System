@@ -162,6 +162,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <th >Name</th>
             <th>food</th>
             <th>Category</th>
+            <th>Classification</th>
             <th>phone no</th>
             <th>date/time</th>
             <th>address</th>
@@ -185,6 +186,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <td data-label=\"name\">".$row['name']."</td>
                         <td data-label=\"food\">".$row['food']."</td>  
                         <td data-label=\"category\">".$row['category']."</td>
+                        <td data-label=\"classification\">".$row['classification']."</td>
                         <td data-label=\"phoneno\">".$row['phoneno']."</td>
                         <td data-label=\"date\">".$row['date']."</td>
                         <td data-label=\"Address\">".$row['address']."</td>
