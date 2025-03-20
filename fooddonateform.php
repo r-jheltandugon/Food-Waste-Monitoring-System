@@ -52,50 +52,48 @@ if(isset($_POST['submit']))
         <input type="text" id="foodname" name="foodname" required/>
         </div>
         <div class="input">
-        <label for="food">Select the Category:</label>
-        <br><br>
-        <div class="image-radio-group">
-            <input type="radio" id="bio" name="image-choice" value="bio">
-            <label for="bio">
-              <img src="img/bio.png" alt="bio" >
-            </label>
-            <input type="radio" id="nonbio" name="image-choice" value="nonbio"checked>
-            <label for="nonbio">
-              <img src="img/nonbio.png" alt="nonbio" >
-            </label>
+          <label for="food">Select the Category:</label>
+          <br><br>
+          <div class="image-radio-group">
+              <input type="radio" id="bio" name="image-choice" value="bio">
+              <label for="bio">
+                <img src="img/bio.png" alt="bio" >
+              </label>
+              <input type="radio" id="nonbio" name="image-choice" value="nonbio"checked>
+              <label for="nonbio">
+                <img src="img/nonbio.png" alt="nonbio" >
+              </label>
           </div>
-          <br>
-        <!-- <input type="text" id="food" name="food"> -->
+        </div>
+        <div class="input-field">
+            <label for="classification">Classification:</label>
+            <select id="classification" name="classification">
+                <option value="">Select Classification</option>
+                <option value="fertilizer">Fertilizer</option>
+                <option value="pet_food">Pet/Animal Food</option>
+            </select>
         </div>
         <div class="input">
-        <label for="quantity">Quantity:(number of person /kg)</label>
-        <input type="text" id="quantity" name="quantity" required/>
+          <label for="quantity">Quantity:(number of person /kg)</label>
+          <input type="text" id="quantity" name="quantity" required/>
         </div>
-       <b><p style="text-align: center;">Contact Details</p></b>
+        <b><p style="text-align: center;">Contact Details</p></b>
         <div class="input">
-          <!-- <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-          </div> -->
-      <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name"value="<?php echo"". $_SESSION['name'] ;?>" required/>
-      </div>
-      <div>
-        <label for="phoneno" >PhoneNo:</label>
-      <input type="text" id="phoneno" name="phoneno" maxlength="11" pattern="[0-9]{11}" required />
-        
-      </div>
-      </div>
+          <div>
+            <label for="name">Name:</label>
+              <input type="text" id="name" name="name"value="<?php echo"". $_SESSION['name'] ;?>" required/>
+          </div>
+          <div>
+            <label for="phoneno" >PhoneNo:</label>
+              <input type="text" id="phoneno" name="phoneno" maxlength="11" pattern="[0-9]{11}" required />  
+          </div>
+        </div>
         <div class="input">
-
           <label for="address" style="padding-left: 10px;">Address:</label>
           <input type="text" id="address" name="address" required/><br>
-        
         </div>
         <div class="btn">
             <button type="submit" name="submit"> submit</button>
-     
         </div>
      </form>
      </div>
