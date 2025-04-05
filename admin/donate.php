@@ -99,70 +99,67 @@ if($_SESSION['name']==''){
         <br>
         <br>
         <br>
-    
-  
 
             <div class="activity">
                
             <div class="category">
-          <form method="post">
-             <label for="category" class="logo">Select Category:</label>
-             <!-- <br> -->
-            <select id="category" name="category">
-               <option value="bio">Biodegrable</option>
-               <option value="nonbio">Non-Biodegrable</option>      
-            </select>
-                <input type="submit" value="Get Details">
-         </form>
+                <form method="post">
+                    <input type="text" id="search" name="search" placeholder="search........." value="<?php if(isset($_POST['search'])) echo $_POST['search']; ?>">
+                    <input type="submit" value="Search">
+                </form>
          <br>
 
-         <?php
+        <?php
+            if (isset($_POST['search'])) {
+                $search = mysqli_real_escape_string($connection, $_POST['search']);
 
-    if(isset($_POST['category'])) {
-      $category = $_POST['category'];
-      
-      $sql = "SELECT * FROM food_donations WHERE category='$category'";
-      $result=mysqli_query($connection, $sql);
-    //   $result = $conn->query($sql);
-      
-      // If there are results, display them in a table
-      if ($result->num_rows > 0) {
-        
-        echo" <div class=\"table-container\">";
-        echo "    <div class=\"table-wrapper\">";
-        echo "  <table class=\"table\">";
-        echo "<table><thead>";
-        echo" <tr>
-        <th >Name</th>
-        <th>food</th>
-        <th>Category</th>
-        <th>phoneno</th>
-        <th>date/time</th>
-        <th>address</th>
-        <th>Quantity</th>
-        
-    </tr>
-    </thead><tbody>";
+                $sql = "SELECT * FROM food_donations 
+                        WHERE name LIKE '%$search%' 
+                        OR food LIKE '%$search%' 
+                        OR category LIKE '%$search%' 
+                        OR classification LIKE '%$search%' 
+                        OR address LIKE '%$search%'";
+                
+                $result = mysqli_query($connection, $sql);
 
-        while($row = $result->fetch_assoc()) {
+                if ($result->num_rows > 0) {
+                    echo "<div class=\"table-container\">";
+                    echo "<div class=\"table-wrapper\">";
+                    echo "<table class=\"table\">";
+                    echo "<thead><tr>
+                            <th>Name</th>
+                            <th>Food</th>
+                            <th>Category</th>
+                            <th>Phone No</th>
+                            <th>Date/Time</th>
+                            <th>Address</th>
+                            <th>Quantity</th>
+                        </tr></thead><tbody>";
 
-            if ($row['category'] == 'bio') {
-                $row['category'] = 'Biodegradable';
-            } elseif ($row['category'] == 'nonbio') {
-                $row['category'] = 'Non-Biodegradable';
+                    while($row = $result->fetch_assoc()) {
+                        if ($row['category'] == 'bio') {
+                            $row['category'] = 'Biodegradable';
+                        } elseif ($row['category'] == 'nonbio') {
+                            $row['category'] = 'Non-Biodegradable';
+                        }
+
+                        echo "<tr>
+                                <td>{$row['name']}</td>
+                                <td>{$row['food']}</td>
+                                <td>{$row['category']}</td>
+                                <td>{$row['phoneno']}</td>
+                                <td>{$row['date']}</td>
+                                <td>{$row['address']}</td>
+                                <td>{$row['quantity']}</td>
+                            </tr>";
+                    }
+
+                    echo "</tbody></table></div></div>";
+                } else {
+                    echo "<p>No results found for '<strong>$search</strong>'.</p>";
+                }
             }
-
-            echo "<tr><td data-label=\"name\">".$row['name']."</td><td data-label=\"food\">".$row['food']."</td><td data-label=\"category\">".$row['category']."</td><td data-label=\"phoneno\">".$row['phoneno']."</td><td data-label=\"date\">".$row['date']."</td><td data-label=\"Address\">".$row['address']."</td><td data-label=\"quantity\">".$row['quantity']."</td></tr>";
-
-        }
-        echo "</tbody></table></div>";
-      } else {
-        echo "<p>No results found.</p>";
-      }
-      
-   
-    }
-  ?>
+        ?>
  </div>
 
  
