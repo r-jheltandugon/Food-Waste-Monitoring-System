@@ -127,6 +127,28 @@ if($_SESSION['name']==''){
                         ?>
                         <!-- <span class="number">10,120</span> -->
                     </div>
+
+                    <div class="box box2">
+                        <i class="uil uil-flask"></i>
+                        <span class="text">Total fertilizer</span>
+                        <?php
+                           $query="SELECT count(*) as count FROM food_donations WHERE classification='fertilizer'";
+                           $result=mysqli_query($connection, $query);
+                           $row=mysqli_fetch_assoc($result);
+                         echo "<span class=\"number\">".$row['count']."</span>";
+                        ?>
+                    </div>
+
+                    <div class="box box4">
+                        <i class="uil uil-paw"></i>
+                        <span class="text">Total pet/animal food</span>
+                        <?php
+                           $query="SELECT count(*) as count FROM food_donations WHERE classification='pet_food'";
+                           $result=mysqli_query($connection, $query);
+                           $row=mysqli_fetch_assoc($result);
+                         echo "<span class=\"number\">".$row['count']."</span>";
+                        ?>
+                    </div>
                 </div>
                 <br>
                 <br>
