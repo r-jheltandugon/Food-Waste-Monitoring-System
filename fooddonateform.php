@@ -74,7 +74,7 @@ if(isset($_POST['submit']))
             </select>
         </div>
         <div class="input">
-          <label for="quantity">Quantity:(number of person /kg)</label>
+          <label for="quantity">Quantity:(kg)</label>
           <input type="text" id="quantity" name="quantity" required/>
         </div>
         <b><p style="text-align: center;">Contact Details</p></b>
