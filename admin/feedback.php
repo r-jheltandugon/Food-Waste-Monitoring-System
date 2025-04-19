@@ -27,7 +27,7 @@ if($_SESSION['name']==''){
     
 <?php
  $connection=mysqli_connect("localhost","root","");
- $db=mysqli_select_db($connection,'demo');
+ $db=mysqli_select_db($connection,'fwms');
  
 
 
